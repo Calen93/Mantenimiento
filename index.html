@@ -3,7 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mantenimiento de mis vehículos</title>
+<title>Mantenimiento</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mantenimiento">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#1F6F8B">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEK0lEQVR42u3dQW7bMBRFUZvIPtIdpoPsIh1kiVlKBwWCAk0RWZbF/z7PnbZAyM/LR8qipOvzy9sF+IqhBCAHyAFygBwgB8gBcoAcIAfIAZAD5AA5QA6QA+QAOUAOkAPkAMgBcoAcIAfIAXKAHCAHyAFyAOQAOXA7T8v2/OP9dft//vHz14Iluq7z2qebbOBKfzkOFGJBUXrKcYITK1jSTY4pWnRVpIkc051oaUm8HAW1aKPIYMbiLWyYHHFFT4yQPDmi52KWImFyHGvGxqGa8kfJcbYZhwxMkWaQ44DxeOhIlG3YKnLsHoDTql+/hT3l2FH3iRXPam22HLfWukihQ5v9L4MZ069Xy16cF02OHidx0nsx1LRIhBTMj3LJsb1GQb8mhXZqKGKpCCmVH4MZ/Mi7WulkRmjLq8ixcbqEmvHZuym3+rLlWMGMRD8GM07rXZwfGXuOBmbs82NpObZMjjZm7OjX3PConhz9zPj7n4r3blSeW6F826+bOj6xSqOyGYmxsXEsb9p8zPKj7rISZ8bH++u+H3md52i+oDz6TvKUihVNjqzYuN+Mmv0dzCiSGQ77dFtTzjyXdH7dyiVHyyM8G/tVre+jckFlxtzqrfs2wXMGyfs51lpTHmrGumdIG6wp0zPjzBoWSo76sXGOGXXq4PXW9hnkYEZlOXI3HNXMOK2SVZKjwfOuB3ahSDX8znHMXGz5BvQnWqxwnWVDyoxMOQruRqPNOKeeJZLj/BLXN6NCIK24rFhNyLHihberlZmxsdSXACUHyAFygBwgB8gBcpSgxwE+coAcIeGxWmxcsl41OdGP0FuDGXIUnHbbmxTdeMvKA0u84GryyerHBP+M/ZcZvrIW5OBByLLS9bWT0dUYZqecsyEFOdBSDtuOanU4VQ7bjqwaDpNGBew5UF4OK0tQ9colx8orS7W+j/b6i41We441w6Ngr4dK6W8tOawsERUbJpOelpOj/ldV65gxK2hnJofFpXiVRoOJZUHpKcfKi0v9L+sOM0yP6sqxcXIs+NnA6XuypFdN9vAjxYxL3Ivx0/0IMuOSeJ5jhU9z2HPsny6JfiR+zif165BZfoR+6On6/PIWHb/Ff2aN7kvFPcdNNaocIemWV0yOfaNeqrjRjQ+4Wrm1XnUipIcZpZNj95BPrHVWa+PluCcSTqt7/Ra2lePOJeOhA1C2YQvJcdSu4pDxWOc7o0lyHL7rnHJDJ+j8W5gcl/B7b1knI/PkCFUk8cBsqhxBiuSeo85+BUP9ukefsM9OjsoR0uDBiyZy1LGk08M43eSYqEi/Z7R6ynGmJY2f22sux4NEWeRBzoXkuMeVNR/rXVcOfItXTYIcIAfIAXKAHCAHyAFygBwgB0AOkAPkADlADpAD5AA5QA6QAyAHyAFygBwgB8gBcoAcIAfIAZAD/+c33ZwEjaGmzokAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEK0lEQVR42u3dQW7bMBRFUZvIPtIdpoPsIh1kiVlKBwWCAk0RWZbF/z7PnbZAyM/LR8qipOvzy9sF+IqhBCAHyAFygBwgB8gBcoAcIAfIAZAD5AA5QA6QA+QAOUAOkAPkAMgBcoAcIAfIAXKAHCAHyAFyAOQAOXA7T8v2/OP9dft//vHz14Iluq7z2qebbOBKfzkOFGJBUXrKcYITK1jSTY4pWnRVpIkc051oaUm8HAW1aKPIYMbiLWyYHHFFT4yQPDmi52KWImFyHGvGxqGa8kfJcbYZhwxMkWaQ44DxeOhIlG3YKnLsHoDTql+/hT3l2FH3iRXPam22HLfWukihQ5v9L4MZ069Xy16cF02OHidx0nsx1LRIhBTMj3LJsb1GQb8mhXZqKGKpCCmVH4MZ/Mi7WulkRmjLq8ixcbqEmvHZuym3+rLlWMGMRD8GM07rXZwfGXuOBmbs82NpObZMjjZm7OjX3PConhz9zPj7n4r3blSeW6F826+bOj6xSqOyGYmxsXEsb9p8zPKj7rISZ8bH++u+H3md52i+oDz6TvKUihVNjqzYuN+Mmv0dzCiSGQ77dFtTzjyXdH7dyiVHyyM8G/tVre+jckFlxtzqrfs2wXMGyfs51lpTHmrGumdIG6wp0zPjzBoWSo76sXGOGXXq4PXW9hnkYEZlOXI3HNXMOK2SVZKjwfOuB3ahSDX8znHMXGz5BvQnWqxwnWVDyoxMOQruRqPNOKeeJZLj/BLXN6NCIK24rFhNyLHihberlZmxsdSXACUHyAFygBwgB8gBcpSgxwE+coAcIeGxWmxcsl41OdGP0FuDGXIUnHbbmxTdeMvKA0u84GryyerHBP+M/ZcZvrIW5OBByLLS9bWT0dUYZqecsyEFOdBSDtuOanU4VQ7bjqwaDpNGBew5UF4OK0tQ9colx8orS7W+j/b6i41We441w6Ngr4dK6W8tOawsERUbJpOelpOj/ldV65gxK2hnJofFpXiVRoOJZUHpKcfKi0v9L+sOM0yP6sqxcXIs+NnA6XuypFdN9vAjxYxL3Ivx0/0IMuOSeJ5jhU9z2HPsny6JfiR+zif165BZfoR+6On6/PIWHb/Ff2aN7kvFPcdNNaocIemWV0yOfaNeqrjRjQ+4Wrm1XnUipIcZpZNj95BPrHVWa+PluCcSTqt7/Ra2lePOJeOhA1C2YQvJcdSu4pDxWOc7o0lyHL7rnHJDJ+j8W5gcl/B7b1knI/PkCFUk8cBsqhxBiuSeo85+BUP9ukefsM9OjsoR0uDBiyZy1LGk08M43eSYqEi/Z7R6ynGmJY2f22sux4NEWeRBzoXkuMeVNR/rXVcOfItXTYIcIAfIAXKAHCAHyAFygBwgB0AOkAPkADlADpAD5AA5QA6QAyAHyAFygBwgB8gBcoAcIAfIAZAD/+c33ZwEjaGmzokAAAAASUVORK5CYII=">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#EEF1F2;--card:#fff;--ink:#1B2A33;--mute:#5E6E78;--line:#D5DCE0;--acc:#1F6F8B;--accink:#fff;--ok:#2E7D5B;--soon:#A86A0C;--over:#B83A3A;--none:#8A98A1;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -14,35 +21,48 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.4}
 main{max-width:560px;margin:0 auto;padding:16px 16px 48px}
 h1{font-size:1.5rem;font-weight:800;margin:4px 0 14px;letter-spacing:-.01em}
-.tabs{display:flex;gap:8px;margin-bottom:14px}
-.tab{flex:1;padding:10px 12px;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:10px;font:inherit;font-weight:600;text-align:left;cursor:pointer}
+.tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto}
+.tab{flex:1 0 auto;padding:10px 12px;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:10px;font:inherit;font-weight:600;text-align:left;cursor:pointer}
+.tab.plus{flex:0 0 auto;text-align:center;font-size:1.5rem;line-height:1.2;padding:10px 16px}
 .tab small{display:block;font-weight:400;color:var(--mute);font-size:.78rem}
+.tab small.bad{color:var(--over);font-weight:600}
 .tab[aria-selected="true"]{border-color:var(--acc);background:var(--card)}
 .km{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px}
-.km label{display:block;color:var(--mute);font-size:.85rem;margin-bottom:6px}
+.km label,.grid label{display:block;color:var(--mute);font-size:.8rem;margin-bottom:4px}
 .row{display:flex;gap:8px}
-input{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%;min-width:0}
-input:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+input,textarea,select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%;min-width:0}
+input:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .km input{font-size:1.35rem;font-weight:800}
 .btn{font:inherit;font-weight:600;border:0;border-radius:8px;padding:9px 14px;background:var(--acc);color:var(--accink);cursor:pointer;white-space:nowrap}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn.danger{background:transparent;color:var(--over);border:1px solid var(--line)}
-.sum{color:var(--mute);margin:4px 2px 10px;font-size:.92rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
+.stat{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--none);border-radius:8px;padding:10px 12px}
+.stat b{display:block;font-size:1.7rem;font-weight:800;line-height:1.1}
+.stat span{font-size:.8rem;color:var(--mute)}
+.stat.over{border-top-color:var(--over)}.stat.soon{border-top-color:var(--soon)}.stat.ok{border-top-color:var(--ok)}
+.sum{color:var(--mute);margin:6px 2px 12px;font-size:.9rem}
 .item{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--none);border-radius:8px;margin-bottom:8px}
 .item.ok{border-left-color:var(--ok)}.item.soon{border-left-color:var(--soon)}.item.over{border-left-color:var(--over)}
 .head{display:block;width:100%;text-align:left;background:none;border:0;color:inherit;font:inherit;padding:12px 14px;cursor:pointer}
 .head b{display:block;font-weight:600}
-.head span{font-size:.88rem;color:var(--mute)}
-.ok .head span{color:var(--ok)}.soon .head span{color:var(--soon);font-weight:600}.over .head span{color:var(--over);font-weight:600}
+.head .t{font-size:.88rem;color:var(--mute)}
+.ok .head .t{color:var(--ok)}.soon .head .t{color:var(--soon);font-weight:600}.over .head .t{color:var(--over);font-weight:600}
+.bar{display:block;height:5px;border-radius:3px;background:var(--line);margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--none)}
+.ok .bar i{background:var(--ok)}.soon .bar i{background:var(--soon)}.over .bar i{background:var(--over)}
 .edit{padding:0 14px 14px;display:none}
 .item.open .edit{display:block}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.grid label{font-size:.78rem;color:var(--mute);display:block;margin-bottom:3px}
+.full{grid-column:1/-1}
 .actions{display:flex;gap:8px;flex-wrap:wrap}
+.done{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+.done h3{font-size:.95rem;margin:0 0 8px}
+.hist{margin:12px 0 0;padding:0;list-style:none;font-size:.85rem;color:var(--mute)}
+.hist li{padding:5px 0;border-top:1px solid var(--line)}
 details.add{margin-top:14px;background:var(--card);border:1px dashed var(--line);border-radius:8px;padding:12px 14px}
 details.add summary{cursor:pointer;font-weight:600}
-details.add .grid{margin-top:12px}
-.full{grid-column:1/-1}
+details.add .grid,details.add .actions{margin-top:12px}
 .hint{color:var(--mute);font-size:.82rem;margin-top:18px}
 </style>
 </head>
@@ -51,37 +71,39 @@ details.add .grid{margin-top:12px}
   <h1>Mantenimiento</h1>
   <div class="tabs" id="tabs" role="tablist"></div>
   <div id="view"></div>
-  <p class="hint">Los datos se guardan solo en este navegador. Los intervalos son orientativos: ajústalos a lo que indique el manual o tu taller.</p>
+  <p class="hint">Los datos se guardan solo en este dispositivo. Los intervalos son orientativos: ajústalos a lo que indique el manual o tu taller.</p>
 </main>
 <script>
 const KEY='mantenimiento-v1';
-const I=(name,everyKm,everyMonths)=>({id:'i'+Math.random().toString(36).slice(2,9),name,everyKm,everyMonths,lastKm:null,lastDate:null});
-const seed=()=>[
- {id:'moto',name:'Honda Hornet',sub:'CB600F · 2008',km:90000,items:[
+const I=(name,everyKm,everyMonths)=>({id:'i'+Math.random().toString(36).slice(2,9),name,everyKm,everyMonths,lastKm:null,lastDate:null,nextDate:null,note:'',hist:[]});
+const MOTO=()=>[
   I('Aceite y filtro de aceite',6000,12),I('Filtro de aire',12000,0),I('Bujías',12000,0),
   I('Holgura de válvulas',24000,0),I('Líquido de frenos',0,24),I('Refrigerante',0,36),
   I('Lubricar y ajustar cadena',1000,0),I('Pastillas de freno (revisión)',6000,0),
-  I('Batería (revisión)',0,48),I('ITV',0,12)]},
- {id:'bmw',name:'BMW 118d',sub:'2007',km:314000,items:[
+  I('Batería (revisión)',0,48),I('ITV',0,12)];
+const COCHE=()=>[
   I('Aceite y filtro de aceite',15000,12),I('Filtro de aire',30000,0),I('Filtro de combustible',60000,0),
   I('Filtro de habitáculo',15000,12),I('Líquido de frenos',0,24),I('Refrigerante',0,48),
   I('Pastillas y discos (revisión)',30000,0),I('Correa de accesorios',90000,0),
-  I('Aceite de caja de cambios',100000,0),I('Batería (revisión)',0,60),I('ITV',0,12)]}
-];
-let S=null,cur=0,openId=null;
+  I('Aceite de caja de cambios',100000,0),I('Batería (revisión)',0,60),I('ITV',0,12)];
+const seed=()=>[{id:'moto',name:'Honda Hornet',sub:'CB600F · 2008',km:90000,items:MOTO()},{id:'bmw',name:'BMW 118d',sub:'2007',km:314000,items:COCHE()}];
+let S=null,cur=0,openId=null,msg='',mk='',adding=false,confirmDel=null;
 try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
-if(!Array.isArray(S)||!S.length)S=seed();
+if(!Array.isArray(S))S=seed();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const fmt=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const today=()=>new Date().toISOString().slice(0,10);
-const plural=(n,u)=>n+' '+(n===1?u:u+'s');
-function span(d){const a=Math.abs(d);return a>=60?plural(Math.round(a/30),'mes').replace('mess','meses'):plural(a,'día')}
+const dmy=d=>d?d.split('-').reverse().join('/'):'';
+const days=d=>Math.round((d-new Date())/864e5);
+const plural=(n,u)=>n+' '+(n===1?u:u==='mes'?'meses':u+'s');
+const span=d=>{const a=Math.abs(d);return a>=60?plural(Math.round(a/30),'mes'):plural(a,'día')};
 function status(it,km){
-  let rk=null,rd=null,ratio=[];
-  if(it.everyKm>0&&it.lastKm!=null){rk=it.lastKm+it.everyKm-km;ratio.push(rk/it.everyKm)}
-  if(it.everyMonths>0&&it.lastDate){const d=new Date(it.lastDate);d.setMonth(d.getMonth()+it.everyMonths);rd=Math.round((d-new Date())/864e5);ratio.push(rd/(it.everyMonths*30))}
-  if(rk===null&&rd===null)return{lvl:'none',txt:'Sin registrar: anota cuándo se hizo por última vez',score:9};
+  let rk=null,rd=null,r=[];
+  if(it.everyKm>0&&it.lastKm!=null){rk=it.lastKm+it.everyKm-km;r.push(rk/it.everyKm)}
+  if(it.nextDate){rd=days(new Date(it.nextDate));r.push(rd/365)}
+  else if(it.everyMonths>0&&it.lastDate){const d=new Date(it.lastDate);d.setMonth(d.getMonth()+it.everyMonths);rd=days(d);r.push(rd/(it.everyMonths*30))}
+  if(!r.length)return{lvl:'none',txt:'Sin registrar: anota cuándo se hizo por última vez',score:9,used:0};
   let lvl='ok';
   if((rk!==null&&rk<=Math.max(300,it.everyKm*.1))||(rd!==null&&rd<=30))lvl='soon';
   if((rk!==null&&rk<0)||(rd!==null&&rd<0))lvl='over';
@@ -89,60 +111,153 @@ function status(it,km){
   if(rk!==null)p.push(rk>=0?'faltan '+fmt(rk)+' km':'pasado por '+fmt(-rk)+' km');
   if(rd!==null)p.push(rd>=0?'faltan '+span(rd):'vencido hace '+span(rd));
   let t=p.join(' / ');t=t.charAt(0).toUpperCase()+t.slice(1);
-  return{lvl,txt:t,score:Math.min(...ratio)};
+  const m=Math.min(...r);
+  return{lvl,txt:t,score:m,used:Math.min(1,Math.max(0,1-m))};
 }
+const counts=v=>{const c={over:0,soon:0,ok:0,none:0};v.items.forEach(i=>c[status(i,v.km).lvl]++);return c};
+const cost12=v=>{const lim=Date.now()-365*864e5;let t=0;v.items.forEach(i=>(i.hist||[]).forEach(h=>{if(h.cost&&new Date(h.date)>=lim)t+=h.cost}));return t};
 function render(){
-  const v=S[cur];
-  document.getElementById('tabs').innerHTML=S.map((x,i)=>`<button class="tab" role="tab" aria-selected="${i===cur}" data-act="tab" data-i="${i}">${esc(x.name)}<small>${esc(x.sub)}</small></button>`).join('');
-  const list=v.items.map(it=>({it,s:status(it,v.km)})).sort((a,b)=>a.s.score-b.s.score);
-  const over=list.filter(x=>x.s.lvl==='over').length,soon=list.filter(x=>x.s.lvl==='soon').length,none=list.filter(x=>x.s.lvl==='none').length;
-  const parts=[];
-  if(over)parts.push(plural(over,'vencida'));
-  if(soon)parts.push(soon+(soon===1?' próxima':' próximas'));
-  if(none)parts.push(none+' sin registrar');
-  document.getElementById('view').innerHTML=`
+  const ids=S.map((x,i)=>i).filter(i=>!S[i].archived);
+  if(ids.length&&!ids.includes(cur))cur=ids[0];
+  const v=ids.length?S[cur]:null;
+  document.getElementById('tabs').innerHTML=ids.map(i=>{const x=S[i],c=counts(x);return`<button class="tab" role="tab" aria-selected="${i===cur}" data-act="tab" data-i="${i}">${esc(x.name)}<small>${esc(x.sub)}</small>${c.over?`<small class="bad">${plural(c.over,'vencida')}</small>`:''}</button>`}).join('')+'<button class="tab plus" data-act="addv" aria-label="Añadir vehículo">+</button>';
+  const arch=S.map((x,i)=>({x,i})).filter(o=>o.x.archived);
+  let h='';
+  if(adding||!v)h+=`<div class="km"><label>Nuevo vehículo</label>
+    <div class="grid"><div class="full"><input id="vn" type="text" placeholder="Nombre (ej. Vespa)"></div>
+    <div><label>Detalle (modelo y año)</label><input id="vs" type="text"></div>
+    <div><label>Km actuales</label><input id="vk" type="number" inputmode="numeric"></div>
+    <div class="full"><label>Lista inicial de revisiones</label><select id="vt"><option value="moto">Revisiones de moto</option><option value="coche">Revisiones de coche</option><option value="vacia">Lista vacía</option></select></div></div>
+    <div class="actions"><button class="btn" data-act="createv">Crear vehículo</button>${v?'<button class="btn ghost" data-act="cancelv">Cancelar</button>':''}</div></div>`;
+  if(v){
+    const list=v.items.map(it=>({it,s:status(it,v.km)})).sort((a,b)=>a.s.score-b.s.score);
+    const c=counts(v),gasto=cost12(v);
+    h+=`
   <div class="km"><label for="km">Kilómetros actuales</label>
     <div class="row"><input id="km" type="number" inputmode="numeric" min="0" value="${v.km}"><button class="btn" data-act="km">Actualizar</button></div></div>
-  <div class="sum">${parts.length?parts.join(', '):'Todo al día'}</div>
+  <div class="stats"><div class="stat over"><b>${c.over}</b><span>vencidas</span></div><div class="stat soon"><b>${c.soon}</b><span>próximas</span></div><div class="stat ok"><b>${c.ok}</b><span>al día</span></div></div>
+  <div class="sum">${c.none?c.none+' sin registrar. ':''}Gasto registrado en 12 meses: ${fmt(gasto)} €</div>
   ${list.map(({it,s})=>`
   <div class="item ${s.lvl}${openId===it.id?' open':''}" data-id="${it.id}">
-    <button class="head" data-act="toggle"><b>${esc(it.name)}</b><span>${esc(s.txt)}</span></button>
+    <button class="head" data-act="toggle"><b>${esc(it.name)}</b><span class="t">${esc(s.txt)}</span><span class="bar"><i style="width:${Math.round(s.used*100)}%"></i></span></button>
     <div class="edit">
       <div class="grid">
-        <div><label>Última vez (km)</label><input data-f="lastKm" type="number" inputmode="numeric" value="${it.lastKm??''}"></div>
+        <div><label>Última vez (km)</label><input data-f="lastKm" type="number" inputmode="numeric" value="${it.lastKm==null?'':it.lastKm}"></div>
         <div><label>Última vez (fecha)</label><input data-f="lastDate" type="date" value="${it.lastDate||''}"></div>
         <div><label>Cada (km, 0 = no aplica)</label><input data-f="everyKm" type="number" inputmode="numeric" value="${it.everyKm}"></div>
         <div><label>Cada (meses, 0 = no aplica)</label><input data-f="everyMonths" type="number" inputmode="numeric" value="${it.everyMonths}"></div>
+        <div class="full"><label>Próxima fecha fija (opcional, p. ej. cita de la ITV)</label><input data-f="nextDate" type="date" value="${it.nextDate||''}"></div>
+        <div class="full"><label>Notas</label><textarea data-f="note" rows="2">${esc(it.note)}</textarea></div>
       </div>
-      <div class="actions"><button class="btn" data-act="done">Hecho ahora</button><button class="btn ghost" data-act="save">Guardar</button><button class="btn danger" data-act="del">Borrar</button></div>
+      <div class="actions"><button class="btn ghost" data-act="save">Guardar cambios</button><button class="btn danger" data-act="del">Borrar</button></div>
+      <div class="done"><h3>Registrar intervención hecha hoy</h3>
+        <div class="grid"><div><label>Coste (€)</label><input data-f="cost" type="number" inputmode="decimal" step="0.01"></div>
+        <div><label>Qué se hizo</label><input data-f="hnote" type="text"></div></div>
+        <button class="btn" data-act="done">Hecho ahora</button>
+        ${(it.hist&&it.hist.length)?`<ul class="hist">${it.hist.slice(-5).reverse().map(x=>`<li>${dmy(x.date)} / ${fmt(x.km)} km${x.cost?' / '+x.cost+' €':''}${x.note?': '+esc(x.note):''}</li>`).join('')}</ul>`:''}
+      </div>
     </div>
   </div>`).join('')}
   <details class="add"><summary>Añadir revisión</summary>
     <div class="grid"><div class="full"><label>Nombre</label><input id="nn" type="text" placeholder="Ej. Neumáticos"></div>
     <div><label>Cada (km)</label><input id="nk" type="number" inputmode="numeric" value="0"></div>
     <div><label>Cada (meses)</label><input id="nm" type="number" inputmode="numeric" value="0"></div></div>
-    <button class="btn" data-act="add">Añadir</button></details>`;
+    <button class="btn" data-act="add">Añadir</button></details>
+  <details class="add" ${msg&&mk==='p'?'open':''}><summary>Pegar intervenciones (desde una factura)</summary>
+    <p class="hint">Envía la factura a Claude y te devolverá líneas con este formato, una por intervención: fecha | km | coste | revisión | nota</p>
+    <textarea id="pt" rows="4" placeholder="2026-10-20 | 312500 | 85.50 | Aceite y filtro de aceite | Castrol 5W30"></textarea>
+    <div class="actions"><button class="btn" data-act="paste">Aplicar a ${esc(v.name)}</button></div>
+    ${msg&&mk==='p'?`<div class="sum">${esc(msg)}</div>`:''}</details>
+  <div class="actions" style="margin-top:14px"><button class="btn ghost" data-act="arch">Archivar este vehículo (vendido o ya no lo uso)</button></div>`;
+  }
+  if(arch.length)h+=`<details class="add" ${confirmDel!==null?'open':''}><summary>Vehículos archivados (${arch.length})</summary>
+    <ul class="hist">${arch.map(o=>`<li><b>${esc(o.x.name)}</b> ${esc(o.x.sub)} (archivado el ${dmy(o.x.archived)})
+      <div class="actions" style="margin:8px 0"><button class="btn ghost" data-act="unarch" data-i="${o.i}">Recuperar</button><button class="btn danger" data-act="delv" data-i="${o.i}">${confirmDel===o.i?'Pulsa otra vez para borrar':'Eliminar para siempre'}</button></div></li>`).join('')}</ul></details>`;
+  h+=`<details class="add" ${msg&&mk==='b'?'open':''}><summary>Copia de seguridad</summary>
+    <div class="actions"><button class="btn" data-act="exp">Exportar archivo</button><button class="btn ghost" data-act="copy">Copiar texto</button></div>
+    <div class="grid"><div class="full"><label>Importar desde un archivo de copia</label><input id="imf" type="file"></div>
+    <div class="full"><label>O pega aquí el texto de la copia</label><textarea id="imt" rows="3"></textarea></div></div>
+    <button class="btn" data-act="imp">Importar texto</button>
+    ${msg&&mk==='b'?`<div class="sum">${esc(msg)}</div>`:''}</details>`;
+  document.getElementById('view').innerHTML=h;
+}
+const norm=s=>String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+function applyPaste(t){
+  const v=S[cur];let ok=0,nw=0,bad=0;
+  t.split('\n').forEach(line=>{
+    const p=line.split('|').map(x=>x.trim());
+    if(p.length<4)return;
+    const date=p[0],km=num(p[1]),cost=parseFloat(String(p[2]).replace(',','.'))||0,name=p[3],note=p[4]||'',n=norm(name);
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||isNaN(new Date(date))||!n){bad++;return}
+    let it=v.items.find(x=>norm(x.name)===n)||v.items.find(x=>{const m=norm(x.name);return m.includes(n)||n.includes(m)});
+    if(!it){it=I(name,0,0);v.items.push(it);nw++}
+    (it.hist=it.hist||[]).push({date,km,cost,note});
+    if(!it.lastDate||date>=it.lastDate){it.lastDate=date;if(km)it.lastKm=km;it.nextDate=null}
+    if(km>v.km)v.km=km;
+    ok++;
+  });
+  save();mk='p';
+  msg=ok?`Aplicadas ${ok} intervenciones`+(nw?` (${nw} nueva${nw>1?'s':''}: define su intervalo)`:'')+(bad?`; ${bad} línea${bad>1?'s':''} con error`:'')+'.':'No se aplicó nada: revisa el formato de las líneas.';
+  render();
 }
 const num=x=>{const n=parseInt(x,10);return isNaN(n)||n<0?0:n};
+const json=()=>JSON.stringify(S);
+function doImport(t){
+  mk='b';try{const d=JSON.parse(t);if(!Array.isArray(d)||!d.length||!d.every(x=>x&&Array.isArray(x.items)))throw 0;
+    S=d;cur=0;openId=null;save();msg='Copia importada correctamente.'}
+  catch(e){msg='No se pudo importar: el texto o el archivo no es una copia válida.'}
+  render();
+}
 document.addEventListener('click',e=>{
   const b=e.target.closest('[data-act]');if(!b)return;
   const act=b.dataset.act,v=S[cur],box=b.closest('.item');
   const it=box?v.items.find(x=>x.id===box.dataset.id):null;
-  if(act==='tab'){cur=+b.dataset.i;openId=null}
+  const g=f=>box.querySelector('[data-f="'+f+'"]').value;
+  msg='';mk='b';if(act!=='delv')confirmDel=null;
+  if(act==='tab'){cur=+b.dataset.i;openId=null;adding=false}
   else if(act==='km'){const n=num(document.getElementById('km').value);if(n)v.km=n}
   else if(act==='toggle'){openId=openId===it.id?null:it.id}
-  else if(act==='done'){it.lastKm=v.km;it.lastDate=today()}
+  else if(act==='done'){
+    const cost=parseFloat(g('cost'));
+    (it.hist=it.hist||[]).push({date:today(),km:v.km,cost:isNaN(cost)?0:cost,note:g('hnote').trim()});
+    it.lastKm=v.km;it.lastDate=today();it.nextDate=null;
+  }
   else if(act==='save'){
-    const g=f=>box.querySelector('[data-f="'+f+'"]').value;
     it.lastKm=g('lastKm')===''?null:num(g('lastKm'));it.lastDate=g('lastDate')||null;
     it.everyKm=num(g('everyKm'));it.everyMonths=num(g('everyMonths'));
+    it.nextDate=g('nextDate')||null;it.note=g('note').trim();
   }
   else if(act==='del'){v.items=v.items.filter(x=>x!==it);openId=null}
   else if(act==='add'){
     const n=document.getElementById('nn').value.trim();if(!n)return;
     v.items.push(I(n,num(document.getElementById('nk').value),num(document.getElementById('nm').value)));
   }
+  else if(act==='addv'){adding=!adding}
+  else if(act==='cancelv'){adding=false}
+  else if(act==='createv'){
+    const n=document.getElementById('vn').value.trim();if(!n)return;
+    const t=document.getElementById('vt').value;
+    S.push({id:'v'+Date.now(),name:n,sub:document.getElementById('vs').value.trim(),km:num(document.getElementById('vk').value),items:t==='moto'?MOTO():t==='coche'?COCHE():[]});
+    cur=S.length-1;adding=false;openId=null;
+  }
+  else if(act==='arch'){v.archived=today();adding=false;openId=null}
+  else if(act==='unarch'){S[+b.dataset.i].archived=null;cur=+b.dataset.i}
+  else if(act==='delv'){const i=+b.dataset.i;if(confirmDel===i){S.splice(i,1);confirmDel=null;cur=0}else{confirmDel=i;render();return}}
+  else if(act==='paste'){applyPaste(document.getElementById('pt').value);return}
+  else if(act==='exp'){
+    const f=new File([json()],'mantenimiento-copia-'+today()+'.json',{type:'application/json'});
+    if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f]}).catch(()=>{});msg='Elige "Guardar en Archivos" para conservar la copia.'}
+    else{const a=document.createElement('a');a.href=URL.createObjectURL(f);a.download=f.name;a.click();msg='Copia descargada.'}
+  }
+  else if(act==='copy'){
+    try{navigator.clipboard.writeText(json()).then(()=>{msg='Texto copiado. Pégalo en Notas para guardarlo.';render()},()=>{msg='No se pudo copiar.';render()})}catch(x){msg='No se pudo copiar.'}
+    return;
+  }
+  else if(act==='imp'){doImport(document.getElementById('imt').value);return}
   save();render();
+});
+document.addEventListener('change',e=>{
+  if(e.target.id==='imf'&&e.target.files[0]){const r=new FileReader();r.onload=()=>doImport(r.result);r.readAsText(e.target.files[0])}
 });
 render();
 </script>
