@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mantenimiento de mis vehículos</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF1F2;--card:#fff;--ink:#1B2A33;--mute:#5E6E78;--line:#D5DCE0;--acc:#1F6F8B;--accink:#fff;--ok:#2E7D5B;--soon:#A86A0C;--over:#B83A3A;--none:#8A98A1;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11181C;--card:#192227;--ink:#E4EBEE;--mute:#93A3AC;--line:#2C3940;--acc:#5BB5D2;--accink:#0B1418;--ok:#4FC08D;--soon:#E0A23C;--over:#EF7B7B;--none:#6F7F89;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11181C;--card:#192227;--ink:#E4EBEE;--mute:#93A3AC;--line:#2C3940;--acc:#5BB5D2;--accink:#0B1418;--ok:#4FC08D;--soon:#E0A23C;--over:#EF7B7B;--none:#6F7F89;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.4}
+main{max-width:560px;margin:0 auto;padding:16px 16px 48px}
+h1{font-size:1.5rem;font-weight:800;margin:4px 0 14px;letter-spacing:-.01em}
+.tabs{display:flex;gap:8px;margin-bottom:14px}
+.tab{flex:1;padding:10px 12px;border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:10px;font:inherit;font-weight:600;text-align:left;cursor:pointer}
+.tab small{display:block;font-weight:400;color:var(--mute);font-size:.78rem}
+.tab[aria-selected="true"]{border-color:var(--acc);background:var(--card)}
+.km{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px}
+.km label{display:block;color:var(--mute);font-size:.85rem;margin-bottom:6px}
+.row{display:flex;gap:8px}
+input{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%;min-width:0}
+input:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.km input{font-size:1.35rem;font-weight:800}
+.btn{font:inherit;font-weight:600;border:0;border-radius:8px;padding:9px 14px;background:var(--acc);color:var(--accink);cursor:pointer;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.danger{background:transparent;color:var(--over);border:1px solid var(--line)}
+.sum{color:var(--mute);margin:4px 2px 10px;font-size:.92rem}
+.item{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--none);border-radius:8px;margin-bottom:8px}
+.item.ok{border-left-color:var(--ok)}.item.soon{border-left-color:var(--soon)}.item.over{border-left-color:var(--over)}
+.head{display:block;width:100%;text-align:left;background:none;border:0;color:inherit;font:inherit;padding:12px 14px;cursor:pointer}
+.head b{display:block;font-weight:600}
+.head span{font-size:.88rem;color:var(--mute)}
+.ok .head span{color:var(--ok)}.soon .head span{color:var(--soon);font-weight:600}.over .head span{color:var(--over);font-weight:600}
+.edit{padding:0 14px 14px;display:none}
+.item.open .edit{display:block}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid label{font-size:.78rem;color:var(--mute);display:block;margin-bottom:3px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+details.add{margin-top:14px;background:var(--card);border:1px dashed var(--line);border-radius:8px;padding:12px 14px}
+details.add summary{cursor:pointer;font-weight:600}
+details.add .grid{margin-top:12px}
+.full{grid-column:1/-1}
+.hint{color:var(--mute);font-size:.82rem;margin-top:18px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Mantenimiento</h1>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div id="view"></div>
+  <p class="hint">Los datos se guardan solo en este navegador. Los intervalos son orientativos: ajústalos a lo que indique el manual o tu taller.</p>
+</main>
+<script>
+const KEY='mantenimiento-v1';
+const I=(name,everyKm,everyMonths)=>({id:'i'+Math.random().toString(36).slice(2,9),name,everyKm,everyMonths,lastKm:null,lastDate:null});
+const seed=()=>[
+ {id:'moto',name:'Honda Hornet',sub:'CB600F · 2008',km:90000,items:[
+  I('Aceite y filtro de aceite',6000,12),I('Filtro de aire',12000,0),I('Bujías',12000,0),
+  I('Holgura de válvulas',24000,0),I('Líquido de frenos',0,24),I('Refrigerante',0,36),
+  I('Lubricar y ajustar cadena',1000,0),I('Pastillas de freno (revisión)',6000,0),
+  I('Batería (revisión)',0,48),I('ITV',0,12)]},
+ {id:'bmw',name:'BMW 118d',sub:'2007',km:314000,items:[
+  I('Aceite y filtro de aceite',15000,12),I('Filtro de aire',30000,0),I('Filtro de combustible',60000,0),
+  I('Filtro de habitáculo',15000,12),I('Líquido de frenos',0,24),I('Refrigerante',0,48),
+  I('Pastillas y discos (revisión)',30000,0),I('Correa de accesorios',90000,0),
+  I('Aceite de caja de cambios',100000,0),I('Batería (revisión)',0,60),I('ITV',0,12)]}
+];
+let S=null,cur=0,openId=null;
+try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!Array.isArray(S)||!S.length)S=seed();
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const fmt=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const today=()=>new Date().toISOString().slice(0,10);
+const plural=(n,u)=>n+' '+(n===1?u:u+'s');
+function span(d){const a=Math.abs(d);return a>=60?plural(Math.round(a/30),'mes').replace('mess','meses'):plural(a,'día')}
+function status(it,km){
+  let rk=null,rd=null,ratio=[];
+  if(it.everyKm>0&&it.lastKm!=null){rk=it.lastKm+it.everyKm-km;ratio.push(rk/it.everyKm)}
+  if(it.everyMonths>0&&it.lastDate){const d=new Date(it.lastDate);d.setMonth(d.getMonth()+it.everyMonths);rd=Math.round((d-new Date())/864e5);ratio.push(rd/(it.everyMonths*30))}
+  if(rk===null&&rd===null)return{lvl:'none',txt:'Sin registrar: anota cuándo se hizo por última vez',score:9};
+  let lvl='ok';
+  if((rk!==null&&rk<=Math.max(300,it.everyKm*.1))||(rd!==null&&rd<=30))lvl='soon';
+  if((rk!==null&&rk<0)||(rd!==null&&rd<0))lvl='over';
+  const p=[];
+  if(rk!==null)p.push(rk>=0?'faltan '+fmt(rk)+' km':'pasado por '+fmt(-rk)+' km');
+  if(rd!==null)p.push(rd>=0?'faltan '+span(rd):'vencido hace '+span(rd));
+  let t=p.join(' / ');t=t.charAt(0).toUpperCase()+t.slice(1);
+  return{lvl,txt:t,score:Math.min(...ratio)};
+}
+function render(){
+  const v=S[cur];
+  document.getElementById('tabs').innerHTML=S.map((x,i)=>`<button class="tab" role="tab" aria-selected="${i===cur}" data-act="tab" data-i="${i}">${esc(x.name)}<small>${esc(x.sub)}</small></button>`).join('');
+  const list=v.items.map(it=>({it,s:status(it,v.km)})).sort((a,b)=>a.s.score-b.s.score);
+  const over=list.filter(x=>x.s.lvl==='over').length,soon=list.filter(x=>x.s.lvl==='soon').length,none=list.filter(x=>x.s.lvl==='none').length;
+  const parts=[];
+  if(over)parts.push(plural(over,'vencida'));
+  if(soon)parts.push(soon+(soon===1?' próxima':' próximas'));
+  if(none)parts.push(none+' sin registrar');
+  document.getElementById('view').innerHTML=`
+  <div class="km"><label for="km">Kilómetros actuales</label>
+    <div class="row"><input id="km" type="number" inputmode="numeric" min="0" value="${v.km}"><button class="btn" data-act="km">Actualizar</button></div></div>
+  <div class="sum">${parts.length?parts.join(', '):'Todo al día'}</div>
+  ${list.map(({it,s})=>`
+  <div class="item ${s.lvl}${openId===it.id?' open':''}" data-id="${it.id}">
+    <button class="head" data-act="toggle"><b>${esc(it.name)}</b><span>${esc(s.txt)}</span></button>
+    <div class="edit">
+      <div class="grid">
+        <div><label>Última vez (km)</label><input data-f="lastKm" type="number" inputmode="numeric" value="${it.lastKm??''}"></div>
+        <div><label>Última vez (fecha)</label><input data-f="lastDate" type="date" value="${it.lastDate||''}"></div>
+        <div><label>Cada (km, 0 = no aplica)</label><input data-f="everyKm" type="number" inputmode="numeric" value="${it.everyKm}"></div>
+        <div><label>Cada (meses, 0 = no aplica)</label><input data-f="everyMonths" type="number" inputmode="numeric" value="${it.everyMonths}"></div>
+      </div>
+      <div class="actions"><button class="btn" data-act="done">Hecho ahora</button><button class="btn ghost" data-act="save">Guardar</button><button class="btn danger" data-act="del">Borrar</button></div>
+    </div>
+  </div>`).join('')}
+  <details class="add"><summary>Añadir revisión</summary>
+    <div class="grid"><div class="full"><label>Nombre</label><input id="nn" type="text" placeholder="Ej. Neumáticos"></div>
+    <div><label>Cada (km)</label><input id="nk" type="number" inputmode="numeric" value="0"></div>
+    <div><label>Cada (meses)</label><input id="nm" type="number" inputmode="numeric" value="0"></div></div>
+    <button class="btn" data-act="add">Añadir</button></details>`;
+}
+const num=x=>{const n=parseInt(x,10);return isNaN(n)||n<0?0:n};
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-act]');if(!b)return;
+  const act=b.dataset.act,v=S[cur],box=b.closest('.item');
+  const it=box?v.items.find(x=>x.id===box.dataset.id):null;
+  if(act==='tab'){cur=+b.dataset.i;openId=null}
+  else if(act==='km'){const n=num(document.getElementById('km').value);if(n)v.km=n}
+  else if(act==='toggle'){openId=openId===it.id?null:it.id}
+  else if(act==='done'){it.lastKm=v.km;it.lastDate=today()}
+  else if(act==='save'){
+    const g=f=>box.querySelector('[data-f="'+f+'"]').value;
+    it.lastKm=g('lastKm')===''?null:num(g('lastKm'));it.lastDate=g('lastDate')||null;
+    it.everyKm=num(g('everyKm'));it.everyMonths=num(g('everyMonths'));
+  }
+  else if(act==='del'){v.items=v.items.filter(x=>x!==it);openId=null}
+  else if(act==='add'){
+    const n=document.getElementById('nn').value.trim();if(!n)return;
+    v.items.push(I(n,num(document.getElementById('nk').value),num(document.getElementById('nm').value)));
+  }
+  save();render();
+});
+render();
+</script>
+</body>
+</html>
